@@ -1,6 +1,7 @@
 <?php
     include("../../function/koneksi.php");   
-    include("../../function/helper.php");   
+    include("../../function/helper.php");  
+		admin_only($level, "user"); 
      
     $user_id = $_GET['user_id'];
 	
@@ -20,4 +21,3 @@
 											   WHERE user_id='$user_id'");
 
     header("location: ".BASE_URL."index.php?page=my_profile&module=user&action=list");
-?>

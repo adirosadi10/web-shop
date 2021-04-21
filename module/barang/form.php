@@ -8,6 +8,7 @@ $spesifikasi = "";
 $gambar = "";
 $harga = "";
 $stok = "";
+$berat = "";
 $keterangan = "";
 $status = "";
 $button = "Add";
@@ -23,6 +24,7 @@ if ($barang_id) {
   $gambar = $row['gambar'];
   $harga = $row['harga'];
   $stok = $row['stok'];
+  $berat = $row['berat'];
   $status = $row['status'];
   $button = "Update";
 
@@ -72,6 +74,10 @@ if ($barang_id) {
   <div class="element-form">
     <label>Stok</label>
     <span><input type="number" name="stok" value="<?php echo $stok; ?>" /></span>
+  </div>
+  <div class="element-form">
+    <label>Berat(g)</label>
+    <span><input type="number" name="berat" value="<?php echo $berat; ?>" /></span>
   </div>
 
   <div class="element-form">

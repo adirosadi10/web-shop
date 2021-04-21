@@ -3,17 +3,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   background-color: rgb(213, 210, 210);
+  margin: 0;
 }
 
 #container {
   max-width: 100%;
   height: auto;
   margin: 0px auto;
-  padding: 10px;
   overflow-x: hidden;
 }
 #header {
-  margin-top: 20px;
+  position: fixed;
+  width: 100%;
 }
 
 #menu {
@@ -34,17 +35,33 @@ body {
   display: inline-block;
   text-decoration: none;
 }
+#menu #menus {
+  padding: 15px 10px;
+  border-radius: 3px;
+  float: right;
+  vertical-align: bottom;
+}
+#menu #menus a {
+  color: white;
+  padding-right: 5px;
+  margin: 0px 5px;
+  display: inline-block;
+  text-decoration: none;
+}
+#menu #menus a#nama {
+  margin-top: 5px;
+}
 
-#menu #button-keranjang {
+#menu #menus #button-keranjang {
   float: right;
   padding: 2px 10px;
   border-radius: 3px;
 }
-#menu #button-keranjang:hover {
+#menu #menus #button-keranjang:hover {
   background: orange;
 }
 
-#menu #button-keranjang img {
+#menu #menus #button-keranjang img {
   vertical-align: bottom;
 }
 
@@ -57,16 +74,19 @@ body {
 #footer {
   background-color: royalblue;
   padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 #footer p {
   color: white;
-  text-align: right;
+  text-align: center;
   font-size: 10px;
-  margin: 0px;
 }
 #content {
   padding: 10px 0px;
   overflow: hidden;
+  margin: 70px 0px;
 }
 #container-register {
   width: 520px;
@@ -111,6 +131,7 @@ input[type="submit"]:hover {
   width: 15%;
   margin-right: 10px;
   background: royalblue;
+  position: fixed;
 }
 #menu-profile ul {
   padding: 0px;
@@ -133,10 +154,11 @@ input[type="submit"]:hover {
   background-color: orange;
 }
 #profile-content {
-  float: left;
+  float: right;
   padding: 10px;
   background-color: white;
   width: 80%;
+  margin-right: 25px;
 }
 
 #frame-tambah {
@@ -382,4 +404,27 @@ h3.label-data-pengiriman {
   border: 1px solid grey;
   padding: 10px 7px;
   margin: 0px;
+}
+ul.pagination {
+  list-style: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+ul.pagination li {
+  float: left;
+}
+ul.pagination li a {
+  margin-right: 10px;
+  border: 1px solid grey;
+  padding: 8px;
+  text-decoration: none;
+}
+ul.pagination li a:hover,
+ul.pagination li a.active:hover {
+  background: orange;
+  color: white;
+}
+ul.pagination li a.active {
+  background: royalblue;
+  color: white;
 }

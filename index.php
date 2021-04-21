@@ -44,32 +44,40 @@ $totalBarang = count($keranjang);
 <body>
   <div id="container">
     <div id="header">
-      <a href=" <?php echo BASE_URL . "index.php"; ?> ">
-        <img src="<?php echo BASE_URL . "images/logo.png"; ?>" />
-      </a>
+
       <div id="menu">
         <div id="user">
+          <a href=" <?php echo BASE_URL; ?> ">
+            <img src="<?php echo BASE_URL . "images/logo.png"; ?>" />
+          </a>
+
+        </div>
+        <div id="menus">
+
+
           <?php
           if ($user_id) {
-            echo " <a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>Hi, <b>$nama</b></a>
-            <a href='" . BASE_URL . "logout.php'>Logout</a>";
+            echo " <a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list' id='nama'>Hi, <b>$nama</b></a>
+            <a href='" . BASE_URL . "logout.php' id='nama'>Logout</a>";
           } else {
-            echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a>
-              <a href='" . BASE_URL . "index.php?page=register'>Register</a>";
+            echo "<a href='" . BASE_URL . "login.html'id='nama'>Login</a>
+              <a href='" . BASE_URL . "register.html'id='nama'>Register</a>";
           }
           ?>
-        </div>
-        <a href=" <?php echo BASE_URL . "index.php?page=keranjang"; ?> " id="button-keranjang">
-          <?php
-          if ($totalBarang != 0) {
-            echo "<span style='color: white;
+
+
+          <a href=" <?php echo BASE_URL . "keranjang.html"; ?> " id="button-keranjang">
+            <?php
+            if ($totalBarang != 0) {
+              echo "<span style='color: white;
             text-decoration: none;
             font-weight: bold;
             text-align: right;'>$totalBarang</span>";
-          }
-          ?>
-          <img src="<?php echo BASE_URL . "images/cart.png"; ?>" />
-        </a>
+            }
+            ?>
+            <img src="<?php echo BASE_URL . "images/cart.png"; ?>" />
+          </a>
+        </div>
       </div>
     </div>
     <div id="content">

@@ -1,6 +1,7 @@
 <?php
     include("../../function/koneksi.php");
     include("../../function/helper.php");
+    admin_only($level, "banner");
      
     $banner = $_POST['banner'];
     $link = $_POST['link'];
@@ -34,4 +35,3 @@
      
      
     header("location: ".BASE_URL."index.php?page=my_profile&module=banner&action=list");
-?>

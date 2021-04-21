@@ -4,9 +4,9 @@ if ($user_id) {
   $action = isset($_GET['action']) ? $_GET['action'] : false;
   $mode = isset($_GET['mode']) ? $_GET['mode'] : false;
 } else {
-
   header("location: " . BASE_URL . "index.php?page=login");
 }
+admin_only($level, $module);
 ?>
 <div id="page-profile">
   <div id="menu-profile">
@@ -14,11 +14,6 @@ if ($user_id) {
       <?php
       if ($level == "superadmin") {
       ?>
-        <li>
-          <a <?php if ($module == "kategori") {
-                echo "class='active'";
-              } ?> href="<?php echo  BASE_URL . "index.php?page=my_profile&module=kategori&action=list"; ?>">Kategori</a>
-        </li>
         <li>
           <a <?php if ($module == "about") {
                 echo "class='active'";
@@ -28,6 +23,11 @@ if ($user_id) {
           <a <?php if ($module == "banking") {
                 echo "class='active'";
               } ?> href="<?php echo  BASE_URL . "index.php?page=my_profile&module=banking&action=list"; ?>">Banking</a>
+        </li>
+        <li>
+          <a <?php if ($module == "kategori") {
+                echo "class='active'";
+              } ?> href="<?php echo  BASE_URL . "index.php?page=my_profile&module=kategori&action=list"; ?>">Kategori</a>
         </li>
         <li>
           <a <?php if ($module == "barang") {
@@ -60,7 +60,6 @@ if ($user_id) {
     if (file_exists($file)) {
       include_once($file);
     } else {
-
       echo "<h3>halaman tidak ditemukan</h3>";
     }
     ?>

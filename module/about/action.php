@@ -2,6 +2,8 @@
 include_once('../../function/helper.php');
 include_once('../../function/koneksi.php');
 
+admin_only($level, "about");
+
 $pengirim_id = $_GET['pengirim_id'];
 $pengirim = $_POST['pengirim'];
 $phone_pengirim = $_POST['nomor_telepon'];

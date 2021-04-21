@@ -2,6 +2,8 @@
 include("../../function/koneksi.php");
 include("../../function/helper.php");
 
+admin_only($level, "banking");
+
 $bank = $_POST['bank'];
 $nomor_akun = $_POST['nomor_akun'];
 $atas_nama = $_POST['atas_nama'];
